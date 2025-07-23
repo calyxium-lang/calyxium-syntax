@@ -1,0 +1,25 @@
+{
+  "name": "calyxium",
+  "displayName": "calyxium",
+  "description": "Syntax highlighting for calyxium",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "calyxium",
+      "aliases": ["calyxium", "calyxium"],
+      "extensions": [".cx",".cxm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "calyxium",
+      "scopeName": "source.calyxium",
+      "path": "./syntaxes/calyxium.tmLanguage.json"
+    }]
+  }
+}
