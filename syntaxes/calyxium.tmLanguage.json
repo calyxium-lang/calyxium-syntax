@@ -3,16 +3,22 @@
 	"name": "calyxium",
 	"patterns": [
 		{
+			"include": "#numbers"
+		},
+    {
 			"include": "#err"
 		},
 		{
 			"include": "#comments"
 		},
-		{
-			"include": "#operators"
+    {
+			"include": "#functions"
 		},
 		{
-			"include": "#numbers"
+			"include": "#function_calls"
+		},
+		{
+			"include": "#operators"
 		},
 		{
 			"include": "#keywords"
@@ -27,9 +33,6 @@
 			"include": "#primitives"
 		},
 		{
-			"include": "#functions"
-		},
-		{
 			"include": "#variables"
 		}
 	],
@@ -39,10 +42,6 @@
 				{
 					"name": "invalid.deprecated",
 					"match": "[0-9]+([A-Za-z_]+|[A-Za-z_]+[A-Za-z0-9_]*)"
-				},
-				{
-					"name": "invalid.deprecated",
-					"match": "rust|zura|https://www.rust-lang.org/|TheDevConnor|https://github.com/TheDevConnor/Zura-Transpiled|https://github.com/TheDevConnor|https://zuralang.co/|https://zura-lang.thedevconnor.repl.co/"
 				}
 			]
 		},
@@ -95,16 +94,20 @@
 				{
 					"name": "keyword.operator.match.calyxium",
 					"match": "(->)"
-				},
-				{
-					"name": "keyword.operator.pipeline.calyxium",
-					"match": "(\\|)"
 				}
 			]
 		},
 		"numbers": {
-			"name": "constant.numeric",
-			"match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
+			"patterns": [
+        {
+          "name": "constant.numeric",
+          "match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
+        },
+        {
+          "name": "constant.numeric",
+    			"match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
+        }
+      ]
 		},
 		"keywords": {
 			"patterns": [
@@ -137,7 +140,26 @@
 			"patterns": [
 				{
 					"name": "support.function",
-					"match": "((print|println|to_float|to_int|to_string|to_bytes|length|input|assert)(\\(|)|[A-Za-z]+[A-Za-z0-9_$]*\\()"
+					"match": "((print|println|to_float|to_int|to_string|to_bytes|length|input|assert)(\\(|))"
+				}
+			]
+		},
+		"function_calls": {
+			"patterns": [
+				{
+					"name": "support.function",
+					"match": "([A-Za-z]+[A-Za-z0-9_$]*)\\s*\\("
+				},
+				{
+					"match": "(\\|>)\\s*([A-Za-z]+[A-Za-z0-9_$]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.pipeline.calyxium"
+						},
+						"2": {
+							"name": "support.function"
+						}
+					}
 				}
 			]
 		},
@@ -145,7 +167,7 @@
 			"patterns": [
 				{
 					"name": "support.variable",
-					"match": ""
+					"match": "[A-Za-z]+[A-Za-z0-9_$]*"
 				}
 			]
 		}

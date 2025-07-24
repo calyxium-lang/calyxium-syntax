@@ -17,11 +17,9 @@ assert(123 |> to_string == "123")
 assert((2 + 3) |> sqr == 25)
 
 -- $ hi i am doc $
---
-a--
-TheDevConnor https://github.com/TheDevConnor https://github.com/TheDevConnor/Zura-Transpiled
 
 let y: int = 7 |> double
+let y: int = 7 |>double
 assert(y == 14) 
 
 let id(x: int): int {
