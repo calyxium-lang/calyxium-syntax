@@ -3,6 +3,7 @@
   "displayName": "Calyxium Syntax",
   "description": "Syntax highlighting for Calyxium",
   "version": "0.0.1",
+  "publisher": "Calyxium-lang",
   "icon": "imgs/icon.png",
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
     "vscode": "^1.102.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages", "Linters", "Language Packs", "Extension Packs", "Languages", "Formatters", "Snippets", "Other"
   ],
   "contributes": {
     "languages": [{
