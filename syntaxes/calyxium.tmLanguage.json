@@ -55,8 +55,8 @@
 					"match": "([A-Za-z]+[A-Za-z0-9_]*)--"
 				},
 				{
-					"name": "comment.line.documentation.calyxium",
-					"match": "-- \\$.*$"
+					"name": "comment.line.number-sign.calyxium",
+					"match": "--\\s\\$.*\\$"
 				},
 				{
 					"name": "comment.line.double-dash.calyxium",
