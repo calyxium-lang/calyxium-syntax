@@ -5,13 +5,13 @@
 		{
 			"include": "#numbers"
 		},
-    {
+    	{
 			"include": "#err"
 		},
 		{
 			"include": "#comments"
 		},
-    {
+    	{
 			"include": "#functions"
 		},
 		{
