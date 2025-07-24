@@ -2,7 +2,7 @@
   "name": "calyxium-syntax",
   "displayName": "Calyxium Syntax",
   "description": "Syntax highlighting for Calyxium",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "Calyxium-lang",
   "icon": "imgs/icon.png",
   "repository": {
