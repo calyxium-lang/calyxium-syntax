@@ -58,5 +58,15 @@ let greet(name: string): string {
 assert("World" |> greet == "Hello, World")
 
 assert(true |> to_string == "true")
-
+'\1''d'
 assert(3.14 |> to_string == "3.14")
+
+let check(n: int): string {
+    if (n > 10) {
+        match n with
+            | 42 -> "magic"
+            | _ -> "big"
+    } else {
+        return "small"
+    }
+}

@@ -11,6 +11,9 @@
 		{
 			"include": "#comments"
 		},
+		{
+			"include": "#keywords"
+		},
     	{
 			"include": "#functions"
 		},
@@ -21,10 +24,10 @@
 			"include": "#operators"
 		},
 		{
-			"include": "#keywords"
+			"include": "#strings"
 		},
 		{
-			"include": "#strings"
+			"include": "#characters"
 		},
 		{
 			"include": "#constants"
@@ -40,7 +43,7 @@
 		"err": {
 			"patterns": [
 				{
-					"name": "invalid.deprecated",
+					"name": "invalid.illegal",
 					"match": "[0-9]+([A-Za-z_]+|[A-Za-z_]+[A-Za-z0-9_]*)"
 				}
 			]
@@ -99,15 +102,15 @@
 		},
 		"numbers": {
 			"patterns": [
-        {
-          "name": "constant.numeric",
-          "match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
-        },
-        {
-          "name": "constant.numeric",
-    			"match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
-        }
-      ]
+				{
+				"name": "constant.numeric",
+				"match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
+				},
+				{
+				"name": "constant.numeric",
+						"match": "\\b(0b[01_]+|0x[0-9a-fA-F_]+|\\d[\\d_]*(\\.\\d[\\d_]*)?([eE][+-]?\\d+)?)([fFdD]?)\\b"
+				}
+			]
 		},
 		"keywords": {
 			"patterns": [
@@ -125,6 +128,33 @@
 				{
 					"name": "constant.character.escape.calyxium",
 					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"patterns": [
+				{
+					"match": "(('\\\\\\d')|('(\\\\.)')|('.{2,}')|('')|('.'))",
+					"captures": {
+						"2": {
+							"name": "invalid.illegal"
+						},
+						"3": {
+							"name": "string.quoted.double.calyxium"
+						},
+						"4": {
+							"name": "constant.character.escape.calyxium"
+						},
+						"5": {
+							"name": "invalid.illegal"
+						},
+						"6": {
+							"name": "invalid.illegal"
+						},
+						"7": {
+							"name": "string.quoted.double.calyxium"
+						}
+					}
 				}
 			]
 		},
