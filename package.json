@@ -1,8 +1,9 @@
 {
-  "name": "calyxium",
-  "displayName": "calyxium",
-  "description": "Syntax highlighting for calyxium",
+  "name": "calyxium-syntax",
+  "displayName": "Calyxium Syntax",
+  "description": "Syntax highlighting for Calyxium",
   "version": "0.0.1",
+  "repository": "https://github.com/calyxium-lang/calyxium-syntax",
   "engines": {
     "vscode": "^1.102.0"
   },
