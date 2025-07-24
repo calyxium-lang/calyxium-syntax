@@ -58,7 +58,6 @@ let greet(name: string): string {
 assert("World" |> greet == "Hello, World")
 
 assert(true |> to_string == "true")
-'\1''d'
 assert(3.14 |> to_string == "3.14")
 
 let check(n: int): string {
