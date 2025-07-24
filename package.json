@@ -3,7 +3,11 @@
   "displayName": "Calyxium Syntax",
   "description": "Syntax highlighting for Calyxium",
   "version": "0.0.1",
-  "repository": "https://github.com/calyxium-lang/calyxium-syntax",
+  "icon": "imgs/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calyxium-lang/calyxium-syntax"
+  },
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -15,12 +19,12 @@
       "id": "calyxium",
       "aliases": ["calyxium", "calyxium"],
       "extensions": [".cx",".cxm"],
-      "configuration": "./language-configuration.json"
+      "configuration": "language-configuration.json"
     }],
     "grammars": [{
       "language": "calyxium",
       "scopeName": "source.calyxium",
-      "path": "./syntaxes/calyxium.tmLanguage.json"
+      "path": "syntaxes/calyxium.tmLanguage.json"
     }]
   }
 }
