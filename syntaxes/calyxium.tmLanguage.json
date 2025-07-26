@@ -170,7 +170,7 @@
 			"patterns": [
 				{
 					"name": "support.function",
-					"match": "((print|println|to_float|to_int|to_string|to_bytes|length|input|assert)(\\(|))"
+					"match": "((panic|print|to_float|to_int|to_string|to_bytes|length|input|assert)(\\(|))"
 				}
 			]
 		},
